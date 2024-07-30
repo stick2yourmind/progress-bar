@@ -8,11 +8,6 @@ export interface CircleProgressProps{
 
 export function CircleProgress({ percentage, circleSize }:CircleProgressProps) {
   const radius = 85
-  // const perimeter = radius * Math.PI * 2
-  // const perimeterProgress = perimeter - (perimeter * percentage)/100
-  // const aux = cn(progressCircleBarVariants( {  className: "stroke-current", indicator: "strongBuy"  } ))
-  // console.log('🚀 ~ file: circle-progress.tsx:15 ~ CircleProgress ~ aux:', aux)
-  const strongBuy = true
   
   const indicator = percentage >= 80 ? "strongBuy" 
                   : percentage >= 60 ? "buy"
@@ -49,14 +44,7 @@ export function CircleProgress({ percentage, circleSize }:CircleProgressProps) {
           r={radius}
           className={ cn("stroke-[1rem] text-red-600 stroke-current fill-none", indicatorClassName[indicator] ) }
           variants={draw}
-          // stroke="#ff0055"
           custom={percentage}
-          // style={{
-          //   strokeDasharray: perimeter,
-          //   strokeDashoffset: perimeterProgress,
-          //   strokeLinecap: "round",
-          //   strokeLinejoin: "round"
-          // }}
           transform={`rotate(180 ${circleSize/2} ${circleSize/2})`}
         />
       </motion.svg>
