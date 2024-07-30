@@ -16,8 +16,8 @@ export function CircleProgress({ percentage, circleSize }:CircleProgressProps) {
   
   const indicator = percentage >= 80 ? "strongBuy" 
                   : percentage >= 60 ? "buy"
-                  : percentage >= 40 ? "sell"
-                  : percentage >= 20 ? "neutral"
+                  : percentage >= 40 ? "neutral"
+                  : percentage >= 20 ? "sell"
                   : "strongSell"
 
   const indicatorClassName = {
